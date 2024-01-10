@@ -121,7 +121,7 @@ const [reporterNumber,setreporterNumber]=useState()
 
 axios.defaults.withCredentials=true
 const Report=async()=>{
-  const send=await axios.post('http://localhost:300/reports',{reporterName,incidenceName,incidenceDetails,reporterNumber})
+  const send=await axios.post('https://PoliceApi.onrender.com/reports',{reporterName,incidenceName,incidenceDetails,reporterNumber})
   try{
     console.log(send.data);
     if(send.data.message=="Report sent"){
@@ -154,7 +154,7 @@ const Report=async()=>{
             </div>
             <div className=' flex justify-start items-start mt-6'>
             <div className=' px-3 inline-block font-semi-bold text-[15px] font-sans'><GiHouse size={18} /></div>
-            <div className=' inline-block capitalize font-semi-bold text-[15px] ml-3 font-sans  text-gray-500 cursor-pointer'>Home</div>
+            <div className=' inline-block capitalize font-semi-bold text-[15px] ml-3 font-sans  text-gray-500 cursor-pointer' onClick={handleToggle}>Home</div>
           </div>
           <div className=' flex justify-start items-start mt-8'>
             <div className=' px-3 inline-block font-semi-bold text-[15px] font-sans'><FaCircleInfo size={18} /></div>

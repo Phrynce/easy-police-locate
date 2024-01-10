@@ -22,10 +22,10 @@ axios.defaults.withCredentials=true;
       try{
         console.log(res);
         if(res.data.message==='username and password requird'){
-          toast('username and password requird')
+          toast(res.data.message)
         }
         if(res.data.message==='user does not exist'){
-          toast('user does not exist')
+          toast(res.data.message)
         }if(res.data.role.user==="Admin"){
           console.log(res.data);
           nav('/dashboard')
@@ -40,7 +40,7 @@ axios.defaults.withCredentials=true;
         setuse(res.data.role.user)
       }
       catch(err){
-        toast(err.message)
+        console.log(err);
       } 
       }
     function move(){
