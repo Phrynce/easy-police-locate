@@ -17,7 +17,7 @@ axios.defaults.withCredentials=true;
     const handleSubmit=async (e)=>{
         e.preventDefault()  
         try{
-    const respons=await axios.post('http://localhost:300/register',{fname,lname,mail,pwd})
+    const respons=await axios.post('https://mynode-e6ly.onrender.com/register',{fname,lname,mail,pwd})
     console.log(respons.data.message);
     if(respons.data.message==='username and password requird') {
       toast('username and password requird')

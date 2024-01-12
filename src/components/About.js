@@ -10,7 +10,7 @@ const About = () => {
     const nav=useNavigate()
 
     const handle=async()=>{
-      const response=await axios.get(`http://localhost:300/data/${userID}`)
+      const response=await axios.get(`https://mynode-e6ly.onrender.com/data/${userID}`)
       try{
         console.log(response.data);
         setName(response.data.firstname)

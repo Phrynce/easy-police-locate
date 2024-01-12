@@ -121,7 +121,7 @@ const [reporterNumber,setreporterNumber]=useState()
 
 axios.defaults.withCredentials=true
 const Report=async()=>{
-  const send=await axios.post('https://PoliceApi.onrender.com/reports',{reporterName,incidenceName,incidenceDetails,reporterNumber})
+  const send=await axios.post('https://mynode-e6ly.onrender.com/reports',{reporterName,incidenceName,incidenceDetails,reporterNumber})
   try{
     console.log(send.data);
     if(send.data.message=="Report sent"){
