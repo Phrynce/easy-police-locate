@@ -118,6 +118,28 @@ function login(){
     nav('/')
 }
 
+const [reporterName,setreporterName]=useState()
+const [incidenceName,setincidenceName]=useState()
+const [incidenceDetails,setincidenceDetails]=useState()
+const [reporterNumber,setreporterNumber]=useState()
+
+axios.defaults.withCredentials=true
+const Report=async()=>{
+  const send=await axios.post('https://myapi-27df.onrender.com/reports',{reporterName,incidenceName,incidenceDetails,reporterNumber})
+  try{
+    console.log(send.data);
+    if(send.data.message=="Report sent"){
+      toast.success(send.data.message)
+    }
+    if(send.data.message=="contents are required for investigation"){
+      toast.warn("cannot send empty report")
+    }
+    popdown()
+  }catch(err){
+    console.log(err);
+  }
+}
+
 
   return (
     <div >
@@ -156,19 +178,27 @@ function login(){
               </div>
               <div className=' mt-5 mx-3'>
           <div className=' text-gray-300'>Reporter's Name</div>
-         <div className=''> <input type='text' className=' w-[210px] h-10 rounded-md px-4 text-black' placeholder='e.g: Prince' /></div>
+         <div className=''> <input type='text' className=' w-[210px] h-10 rounded-md px-4 text-black' placeholder='e.g: Prince' value={reporterName} onChange={(e)=>{
+          setreporterName(e.target.value)
+         }} /></div>
         </div>
         <div className=' mt-5 mx-3'>
           <div className=' text-gray-300'>Ongoing Incidence</div>
-         <div className=''> <input type='text' className=' w-[210px] h-10 rounded-md px-4 text-black' placeholder='e.g: Fire Outbreak' /></div>
+         <div className=''> <input type='text' className=' w-[210px] h-10 rounded-md px-4 text-black' placeholder='e.g: Fire Outbreak' value={incidenceName} onChange={(e)=>{
+          setincidenceName(e.target.value)
+         }} /></div>
         </div>
         <div className=' mt-5 mx-3'>
           <div className=' text-gray-300'>Incidence description</div>
-         <div className=' '> <textarea  className=' w-[210px] h-24 rounded-md px-2 py-2 text-black ' placeholder='e.g: Detailed description on the incidence you are reporting' ></textarea></div>
+         <div className=' '> <textarea  className=' w-[210px] h-24 rounded-md px-2 py-2 text-black ' placeholder='e.g: Detailed description on the incidence you are reporting' value={incidenceDetails} onChange={(e)=>{
+          setincidenceDetails(e.target.value)
+         }} ></textarea></div>
         </div>
         <div className=' mx-3'>
           <div className=' text-gray-300'>Reporter's contact</div>
-         <div className=''> <input type='text' className=' w-[210px] h-10 rounded-md px-4 text-black' placeholder='e.g: 0595248912' /></div>
+         <div className=''> <input type='text' className=' w-[210px] h-10 rounded-md px-4 text-black' placeholder='e.g: 0595248912' value={reporterNumber} onChange={(e)=>{
+          setreporterNumber(e.target.value)
+         }} /></div>
         </div>
         <div className=' inline-block w-[80px] h-[37px] bg-blue-600 mt-5 mx-3 text-center rounded-md cursor-pointer hover:bg-blue-800 font-thin text-lg'><span className=' flex justify-center pt-[3px]  items-center'>Report</span></div>
         <div className=' inline-block w-[80px] h-[37px] bg-white border-[1px] border-blue-500 mt-5 mx-2 text-center cursor-pointer rounded-md font-thin text-lg pt-[2px] text-black' onClick={popdown}><span className=' flex justify-center items-center'>cancel</span></div>

@@ -18,7 +18,7 @@ const nav=useNavigate()
 axios.defaults.withCredentials=true;
     const handleSubmit=async (e)=>{
       e.preventDefault()
-      const res=await axios.post('https://mynode-e6ly.onrender.com/login',{username,pword})
+      const res=await axios.post('https://myapi-27df.onrender.com/login',{username,pword})
       try{
         console.log(res);
         if(res.data.message==='username and password requird'){
