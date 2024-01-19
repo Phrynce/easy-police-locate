@@ -26,7 +26,7 @@ const Edit = () => {
     const handleUpdate=async (e)=>{
         e.preventDefault()  
         try{
-    const respons=await axios.put(`https://myapi-27df.onrender.com/update/${userID}`,{fname,mail})
+    const respons=await axios.put(`https://policehelpapi.onrender.com/update/${userID}`,{fname,mail})
     console.log(respons.data.message);
     toast(respons.data.message)
     if(respons.data.message=='updated successfully'){
