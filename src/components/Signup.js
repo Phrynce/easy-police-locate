@@ -41,7 +41,7 @@ function move(e){
 
   return (
     <div>
- <div className=' flex justify-center items-center mt-20 h-[600px]'>
+ <div className=' flex justify-center items-center mt-14 h-[600px]'>
         <form class="form_main" action="">
     <p className="heading ">Sign in</p>
     <div className="inputContainer mb-2">
