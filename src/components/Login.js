@@ -53,7 +53,7 @@ axios.defaults.withCredentials=true;
 
   return (
     <div>
-            <div className=' flex justify-center items-center md:mt-24 mt-36 md:mx-0 mx-4'>
+            <div className=' flex justify-center items-center md:mt-14 mt-36 md:mx-0 mx-4'>
         <form class="form_main" action="">
           <div className=' text-2xl font-thin '>Welcome Back Citizen!</div>
     <p className="heading " >Login</p>

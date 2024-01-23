@@ -162,7 +162,7 @@ const Report=async()=>{
         }
         {
           popup==true?<div className=' flex justify-end'>
-           <div className=' bg-gray-900/95 rounded-xl w-[250px] h-[580px] mx-10 text-white absolute z-10 mt-20'>
+           <div className=' bg-gray-900/95 rounded-xl w-[250px] h-[580px] mx-10 text-white absolute z-10 mt-10'>
             <div className=' flex justify-center items-center mt-3'>
               <div className=' text-2xl font-bold font-sans'>{loading==true?<div>Searching..</div>:<span className=' inline-block'>{look.country_name} <span><img src={look.country_flag} className=' w-8 h-6 inline-block' /></span></span>
 }</div>
@@ -200,7 +200,7 @@ const Report=async()=>{
           setreporterNumber(e.target.value)
          }} /></div>
         </div>
-        <div className=' inline-block w-[80px] h-[37px] bg-blue-600 mt-5 mx-3 text-center rounded-md cursor-pointer hover:bg-blue-800 font-thin text-lg'><span className=' flex justify-center pt-[3px]  items-center'>Report</span></div>
+        <div className=' inline-block w-[80px] h-[37px] bg-blue-600 mt-5 mx-3 text-center rounded-md cursor-pointer hover:bg-blue-800 font-thin text-lg' onClick={Report}><span className=' flex justify-center pt-[3px]  items-center'>Report</span></div>
         <div className=' inline-block w-[80px] h-[37px] bg-white border-[1px] border-blue-500 mt-5 mx-2 text-center cursor-pointer rounded-md font-thin text-lg pt-[2px] text-black' onClick={popdown}><span className=' flex justify-center items-center'>cancel</span></div>
            </div>
           </div>:null
