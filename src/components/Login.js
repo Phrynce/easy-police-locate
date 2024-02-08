@@ -79,11 +79,11 @@ axios.defaults.withCredentials=true;
               
            
 <button id="button" onClick={handleSubmit}>Submit</button>
-    <div className="signupContainer cursor-pointer" onClick={move}>
+    <div className="signupContainer cursor-pointer z-10" onClick={move}>
         <p>Don't have any account?</p>
-        <a>Sign up</a>
+       <div className=' w-16 h-8 mt-1 rounded-md bg-violet-300 flex justify-center items-center'><a className=''>Sign up</a></div> 
     </div>
-    <div className=' mt-6'>
+    <div className=' mt-6 z-10'>
       For Emergency <span className=' text-red-600 cursor-pointer' onClick={Emergency} >click here</span>
     </div>
 </form>
