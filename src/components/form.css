@@ -77,7 +77,7 @@
 }
 
 .inputField::placeholder {
-  color:  white;
+  color:  linear-gradient(to right, black 0%, #333333 50%, white 100%);
   font-size: 1em;
   font-weight: 500;
 }
