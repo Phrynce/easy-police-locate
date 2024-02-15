@@ -79,7 +79,7 @@ function move(e){
 <button id="button" onClick={handleSubmit}>Register</button>
 <div className="signupContainer cursor-pointer z-10" onClick={move}>
         <p>already have and account?</p>
-        <div className=' w-16 h-8 mt-1 rounded-md bg-violet-300 flex justify-center items-center'><a className=''>Login</a></div> 
+        <div className=' w-16 h-8 mt-1 rounded-md bg-blue-950 flex justify-center items-center text-white'><a className=''>Login</a></div> 
     </div>
 </form>
 </div>
